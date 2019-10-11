@@ -4,7 +4,7 @@ import { Route, Redirect } from 'react-router-dom';
 import { useAuth } from './context/auth';
 import { ROUTES } from './constants';
 
-const PrivateRoute = ({component: Component, ...rest}) => {
+const PrivateRoute = ({ component: Component, ...rest }) => {
     const { authTokens } = useAuth();
 
     return (

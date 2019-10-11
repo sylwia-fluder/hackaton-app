@@ -1,0 +1,12 @@
+.error {
+  color: #FF415A;
+  margin-top: 6px;
+
+  &::first-letter {
+    text-transform: uppercase;
+  }
+
+  &__center {
+    text-align: center;
+  }
+}
