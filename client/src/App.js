@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './styles/styles.scss';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import Main from './pages/Main';
