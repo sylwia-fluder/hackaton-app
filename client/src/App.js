@@ -3,6 +3,7 @@ import './styles/styles.scss';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import Main from './pages/Main';
+import ProjectTile from './components/ProjectTile/';
 import PrivateRoute from './PrivateRoute';
 import { AuthContext } from './context/';
 import { ROUTES, STORAGE_NAMES } from './constants';
@@ -21,6 +22,7 @@ const App = () => {
   return (
       <AuthContext.Provider value={{authTokens, setAuthTokens: setTokens}}>
         <Router>
+          <ProjectTile/>
               <Route exact path={ROUTES.HOME} component={Home}/>
               <PrivateRoute path={ROUTES.MAIN} component={Main}/>
         </Router>

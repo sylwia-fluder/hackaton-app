@@ -1,0 +1,11 @@
+@import '../../styles/variables';
+@import '../../styles/functions';
+
+.card {
+    border: 15px solid black;
+    border-radius: 15px;
+  }
+  
+  .card-notification {
+    background-color: gray;
+  }
