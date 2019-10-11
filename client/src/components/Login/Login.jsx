@@ -4,6 +4,7 @@ import Modal from '../Modal';
 
 const Login = () => {
     const [showModal, setShowModal] = useToggle(false);
+
     return (
         <div>
             <button onClick={setShowModal}>Login</button>
