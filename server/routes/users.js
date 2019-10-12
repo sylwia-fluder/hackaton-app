@@ -25,6 +25,16 @@ router.get('/:userId', async (req, res) => {
   res.send(user);
 });
 
+router.put('/:userId', auth, async (req, res) => {
+  const user = await User.findByIdAndUpdate(
+    req.params.userId,
+    _(req.body, ['password']),
+    { new: true }
+  ).select("-password");
+  if (!user) return res.status(404).send('The user with given ID is not found!');
+  res.send(user);
+});
+
 router.post('/', async (req, res) => {
   const { error } = validate(req.body); 
   if (error) return res.status(400).send(error.details[0].message);

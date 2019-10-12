@@ -1,6 +1,5 @@
 import React from 'react';
 import Landing from '../components/Landing';
-
 const Home = () => {
     return (
         <Landing>
@@ -9,6 +8,7 @@ const Home = () => {
             place! Welcome to our app, where you are able to anonymously make your teammates less annoying and make the
             job easier!
         </Landing>
+
     );
 };
 
