@@ -16,14 +16,19 @@ const userSchema = new mongoose.Schema({
     maxlength: 255,
     unique: true
   },
-  projects: {
-    type: Array
-  },
   password: {
     type: String,
     required: true,
     minlength: 5,
     maxlength: 1024
+  },
+  projects: {
+    type: Array,
+    default: [],
+  },
+  projectsAsManager: {
+    type: Array,
+    default: [],
   },
   isAdmin: Boolean,
 });

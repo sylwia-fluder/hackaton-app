@@ -29,7 +29,7 @@ mongoose
   .then(() => console.log('Connected to DB'))
   .catch(err => console.error(err));
 */
-mongoose.connect('mongodb://localhost/hackaton')
+mongoose.connect('mongodb://localhost/hackatonNew')
   .then(() => console.log('Connect to DB'))
   .catch(err => console.error(err));
 
