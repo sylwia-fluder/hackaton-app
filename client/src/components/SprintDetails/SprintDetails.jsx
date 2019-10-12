@@ -1,6 +1,7 @@
 import React from 'react';
 import classNames from 'classnames';
 import styles from './SprintDetails.module.scss';
+import shortid from 'shortid';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheck, faPlusCircle, faTimes } from '@fortawesome/free-solid-svg-icons';
 
@@ -41,7 +42,7 @@ const SprintDetails = (props) => {
     const items = tasks.map(task => {
 
         return(
-            <li className={styles.list_item}>
+            <li key={shortid.generate()} className={styles.list_item}>
                 <p className={styles.task_text}>{task.name}</p> 
                 {(task.status === true) ?  
                     <FontAwesomeIcon icon={faCheck} className={classNames(styles.task_img, styles.green)}/> : 
