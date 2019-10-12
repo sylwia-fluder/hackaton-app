@@ -49,3 +49,4 @@ UserMetadataTile.propTypes = {
     surname:propTypes.string
 }
 
+
