@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { ErrorMessage, Field, Form, Formik } from 'formik';
 import { withRouter } from 'react-router-dom';
 import { get } from 'lodash';
@@ -10,6 +10,7 @@ import Error from '../Error';
 import Input from '../Input';
 import Button from '../Button';
 import ElementMenu from '../Menu/ElementMenu';
+import ContainerButtons from '../ContainerButtons';
 import { useToggle } from '../../hooks';
 import { useAuth } from '../../context';
 import { ROUTES, ENDPOINTS, HEADER_TOKEN } from '../../constants';
@@ -42,6 +43,10 @@ const Login = (props) => {
     const [showModal, setShowModal] = useToggle(false);
     const [showLoader, setShowLoader] = useState(false);
     const [showError, setShowError] = useState(false);
+
+    useEffect(() => {
+        if (!showModal) setShowError(false);
+    }, [showModal]);
 
     const referer = get(props.location, 'state.referer.pathname', ROUTES.MAIN);
 
@@ -101,11 +106,15 @@ const Login = (props) => {
                                 <ErrorMessage name='password'
                                               center={true}
                                               component={Error}/>
-                                <Button>Login</Button>
-                                <button type='submit'>
-                                    Login
-                                </button>
-                                {showError && <Error>Something went wrong...</Error>}
+                                {showError && <Error center={true}>Something went wrong...</Error>}
+                                <ContainerButtons>
+                                    <Button color='red' handleClick={setShowModal}>
+                                        Cancel
+                                    </Button>
+                                    <Button type='submit' color='green'>
+                                        Login
+                                    </Button>
+                                </ContainerButtons>
                             </div>
                         </Form>
                     </Formik>
