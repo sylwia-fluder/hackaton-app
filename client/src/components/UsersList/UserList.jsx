@@ -4,18 +4,20 @@ import styles from './UserList.module.scss';
 import UserMetadataTile from '../UserMetadataTile/UserMetadataTile'
 
 
-
 const UserList =(props) => {
-    console.log(props.usersList);
     return (
-        <div>
-            <UserMetadataTile name = {'Adrian'} surname = {'Podkalicki'} done={true}/>,
-            <UserMetadataTile name = {'Adrian'} surname = {'Podkalicki'} done={true}/>  
+        <div className = {styles.content_list}>
+           {
+               props.usersList.map((user => 
+                <div className = {styles.user__metadata}>
+                    <UserMetadataTile 
+                name = {user['name']} 
+                surname = {user['name']} 
+                done={true}/>
+                 </div>
+           ))}
         </div>
-   
     )
-    
-
 };
 
 export default UserList

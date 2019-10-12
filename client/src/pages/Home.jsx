@@ -2,7 +2,7 @@ import React from 'react';
 import Main from '../components/UsersList/UserList';
 
 const Home = () => {
-    const userList= [{username:'Adrian',surname:'Podkalicki',done:true},{username:'MArcin',surname:'Kowalski',done:false}]
+    const userList= [{name:'Adrian',name:'Podkalicki',done:true},{username:'MArcin',name:'Kowalski',done:false}]
     return (
         <div>
             Home Page

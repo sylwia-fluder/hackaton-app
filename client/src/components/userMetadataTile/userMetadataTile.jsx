@@ -2,7 +2,7 @@ import React from 'react';
 import classNames from 'classnames';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUserCircle,faCheck,faPlusCircle } from '@fortawesome/free-solid-svg-icons'
-import styles from './userMetadata.module.scss';
+import styles from './UserMetadata.module.scss';
  const userMetadataTile = (props) => {
     const personIcon = <FontAwesomeIcon icon={faUserCircle} size = {'6x'} />
     const approve = <FontAwesomeIcon icon={faCheck} size = {'3x'} />
