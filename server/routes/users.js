@@ -10,6 +10,21 @@ router.get('/user', async (req, res) => {
   res.send(user);
 });
 
+router.get('/', async (req, res) => {
+  const user = await User.find();
+  res.send(user);
+});
+
+router.get('/getProjects/:userId', async (req, res) => {
+  const usersProjects = await User.findById(req.params.userId).select('-password');
+  res.send(usersProjects.projects);
+});
+
+router.get('/:userId', async (req, res) => {
+  const user = await User.findById(req.params.userId);
+  res.send(user);
+});
+
 router.post('/', async (req, res) => {
   const { error } = validate(req.body); 
   if (error) return res.status(400).send(error.details[0].message);
