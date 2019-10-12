@@ -1,4 +1,4 @@
-import { STORAGE_NAMES } from '../constants';
+import { getUserToken } from './storages';
 
 const headers = () => {
     return {
@@ -11,7 +11,7 @@ const headersWithToken = () => {
     return {
         Accept: 'application/json',
         'Content-Type': 'application/json',
-        'x-auth-token': sessionStorage.getItem(STORAGE_NAMES.TOKEN),
+        'x-auth-token': getUserToken,
     };
 };
 
