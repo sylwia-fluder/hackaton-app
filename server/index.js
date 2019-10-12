@@ -3,6 +3,8 @@ const mongoose = require("mongoose");
 const dotenv = require("dotenv");
 const cors = require("cors");
 const app = express();
+const feedbackPersonal = require('./routes/feedbackPersonals');
+const feedbackSprint = require('./routes/feedbackSprints');
 const users = require("./routes/users");
 const auth = require("./auth/auth");
 const project = require("./routes/projects");
@@ -18,11 +20,13 @@ app.use(
   })
 );
 app.use(express.json());
-app.use("/api/users", users);
-app.use("/api/auth", auth);
-app.use("/api/project", project);
-app.use("/api/sprint", sprint);
-app.use("/api/tasks", task);
+app.use('/api/users', users);
+app.use('/api/auth', auth);
+app.use('/api/project', project);
+app.use('/api/sprint', sprint);
+app.use('/api/feedbackPersonal', feedbackPersonal);
+app.use('/api/feedbackSprint', feedbackSprint);
+app.use('/api/task', task);
 
 mongoose
   .connect(process.env.DATABASE_URL, {
@@ -32,10 +36,10 @@ mongoose
   .then(() => {console.log("Connected to DB")}
   )
   .catch(err => console.error(err));
+/*mongoose.connect('mongodb://localhost/hackatonNew')
+  .then(() => console.log('Connect to DB'))
+  .catch(err => console.error(err));*/
 
-// mongoose.connect('mongodb://localhost/hackaton')
-//   .then(() => console.log('Connect to DB'))
-//   .catch(err => console.error(err));
 
 async function main (){
   const us =await User.findOne({ _id:"5da140429ef72b2c0eee8027" })

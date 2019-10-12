@@ -1,11 +1,13 @@
 @import 'variables';
 @import 'functions';
 
-body {
+* {
   margin: 0;
-  font-size: $fontSize_Base;
-  font-family: $fontFamily_Base;
-
-  background-color: #4A9B8D;
+  padding: 0;
 }
 
+body {
+  font-size: $fontSize_Base;
+  font-family: $fontFamily_Base;
+  background-color: $color-8;
+}
