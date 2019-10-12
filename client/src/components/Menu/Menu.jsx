@@ -1,24 +1,25 @@
-import React from 'react';
-import { Link } from "react-router-dom";
-import "./menu.scss";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHome, faUser, faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
+import React, {Fragment} from 'react';
+import {faHome, faUser, faSignOutAlt} from '@fortawesome/free-solid-svg-icons';
+import {useAuth} from '../../context';
+import styles from './Menu.module.scss';
+import ElementMenu from './ElementMenu';
+import Login from '../Login';
 
 const Menu = () => {
-    return(
-        <nav className='navbar'>
-            <Link className='nav-link'>
-                <p className='nav-link-text'>HOME</p>
-                <FontAwesomeIcon size='1x' icon={faHome}/>
-            </Link>
-            <Link className='nav-link'>
-                <p className='nav-link-text'>USER</p>
-                <FontAwesomeIcon size='1x' icon={faUser}/>
-            </Link>
-            <Link className='nav-link'>
-                <p className='nav-link-text'>LOGOUT</p>
-                <FontAwesomeIcon size='1x' icon={faSignOutAlt}/>
-            </Link>
+    const {authTokens, setAuthTokens} = useAuth();
+
+    const logOut = () => setAuthTokens();
+
+    return (
+        <nav className={styles.navbar}>
+            {authTokens ?
+                <Fragment>
+                    <ElementMenu icon={faHome} link={''}>HOME</ElementMenu>
+                    <ElementMenu icon={faUser} link={''}>USER</ElementMenu>
+                    <ElementMenu icon={faSignOutAlt} handleClick={logOut}>LOGOUT</ElementMenu>
+                </Fragment> :
+                <Login/>
+            }
         </nav>
     );
 };

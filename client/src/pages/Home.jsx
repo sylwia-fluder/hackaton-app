@@ -1,11 +1,12 @@
-import React, { Fragment } from 'react';
-import Login from '../components/Login';
+import React from 'react';
+import Main from '../components/userMetadataTile/userMetadataTile';
 
 const Home = () => {
     return (
-        <Fragment>
-            <Login/>
-        </Fragment>
+        <div>
+            Home Page
+           <Main name = {'Adrian'} surname = {'Podkalicki'} done={true} />
+        </div>
     );
 };
 
