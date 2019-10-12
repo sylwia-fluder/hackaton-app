@@ -36,5 +36,3 @@ import styles from './UserMetadata.module.scss';
     name:propTypes.string,
     surname:propTypes.string
   }
-
-// export default UserMetadataTile
