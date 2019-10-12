@@ -16,8 +16,9 @@ class ProjectTile extends React.Component {
         return (
             // style="max-width: 540px;"
             //`${styles.card} mb-2 rounded`
-            <div className="card col-sm-9 ">
-                    <div className="card-shadow row no-gutters col-8">
+            <div className="card-container">
+            <div className="card col-sm-9 mx-auto ">
+                    <div className="card-shadow row no-gutters ">
                         <div className="col-md-3">
                         <img src=""/>
                             x
@@ -36,7 +37,7 @@ class ProjectTile extends React.Component {
                         <div className="card-notification col-md-1 text-center my-auto py-2">
                         <svg className="py-2" width="35" height="39" viewBox="0 0 35 39" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M17.5 39L25.2778 31.2H19.4444V19.5H15.5556V31.2H9.72222L17.5 39ZM31.1111 3.9H29.1667V0H25.2778V3.9H9.72222V0H5.83333V3.9H3.88889C2.85749 3.9 1.86834 4.31089 1.13903 5.04228C0.409721 5.77368 0 6.76566 0 7.8V35.1C0 36.1343 0.409721 37.1263 1.13903 37.8577C1.86834 38.5891 2.85749 39 3.88889 39H9.72222V35.1H3.88889V13.65H31.1111V35.1H25.2778V39H31.1111C32.1425 39 33.1317 38.5891 33.861 37.8577C34.5903 37.1263 35 36.1343 35 35.1V7.8C35 6.76566 34.5903 5.77368 33.861 5.04228C33.1317 4.31089 32.1425 3.9 31.1111 3.9Z" fill="black"/>
-                            
+                            <p>2</p>
                         </svg>
             
                         <svg className="svg-tile " width="35" height="39" viewBox="0 0 35 39" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -46,7 +47,7 @@ class ProjectTile extends React.Component {
                         </div>
                     </div>
                 </div>
-
+                </div>
         )
     }
 
