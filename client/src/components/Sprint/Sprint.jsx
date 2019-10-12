@@ -1,5 +1,4 @@
 import React from 'react';
-import classNames from 'classnames';
 import styles from './Sprint.module.scss';
 import SprintDetails from '../SprintDetails';
 
