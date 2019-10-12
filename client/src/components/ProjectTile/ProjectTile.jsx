@@ -17,7 +17,7 @@ class ProjectTile extends React.Component {
             // style="max-width: 540px;"
             //`${styles.card} mb-2 rounded`
             <div className="card-container">
-            <div className="card col-sm-9 mx-auto ">
+             <div className="card col-sm-9 mx-auto align-self-center ">
                     <div className="card-shadow row no-gutters ">
                         <div className="col-md-3">
                         <img src=""/>
