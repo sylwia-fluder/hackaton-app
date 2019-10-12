@@ -1,12 +1,16 @@
 import React from 'react';
 import classNames from 'classnames';
-import styles from './sprint.scss';
+import styles from './Sprint.module.scss';
 import SprintDetails from '../SprintDetails';
 
-const Sprint = () => {
+const Sprint = (props) => {
     return(
-        <div>
-            <SprintDetails />
+        <div className={styles.border}>
+            <div className={styles.container}>
+                <div className={styles.sprint_name}>Sprint name</div>
+                    <SprintDetails />
+                    <SprintDetails />
+            </div>
         </div>
     );
 };
