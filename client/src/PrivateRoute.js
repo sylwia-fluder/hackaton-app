@@ -12,7 +12,7 @@ const PrivateRoute = ({ component: Component, ...rest }) => {
                render={props => (
                    authTokens ?
                        <Component {...props} /> :
-                       <Redirect to={{pathname: ROUTES.SIGN_IN, state: {referer: props.location}}}/>
+                       <Redirect to={{pathname: ROUTES.HOME, state: {referer: props.location}}}/>
                )}
         />
     );

@@ -1,16 +1,19 @@
 import React, { useState } from 'react';
-import { Redirect } from 'react-router-dom';
 import { ErrorMessage, Field, Form, Formik } from 'formik';
+import { withRouter } from 'react-router-dom';
 import { get } from 'lodash';
 import * as yup from 'yup';
+import { faUser } from '@fortawesome/free-solid-svg-icons';
 import Modal from '../Modal';
 import Loading from '../Loading';
 import Error from '../Error';
 import Input from '../Input';
+import ElementMenu from '../Menu/ElementMenu';
 import { useToggle } from '../../hooks';
 import { useAuth } from '../../context';
 import { ROUTES, ENDPOINTS, HEADER_TOKEN } from '../../constants';
 import { headers } from '../../helpers';
+import history from '../../history';
 
 const LoginModel = {
     email: '',
@@ -32,9 +35,8 @@ const LoginSchema = yup.object().shape({
 });
 
 const Login = (props) => {
-    const {authTokens, setAuthTokens} = useAuth();
+    const {setAuthTokens} = useAuth();
 
-    const [isLoggedIn, setLoggedIn] = useState(authTokens);
     const [showModal, setShowModal] = useToggle(false);
     const [showLoader, setShowLoader] = useState(false);
     const [showError, setShowError] = useState(false);
@@ -60,7 +62,7 @@ const Login = (props) => {
                 throw new Error('Not 200 response');
             } else {
                 setAuthTokens(response.headers.get(HEADER_TOKEN));
-                setLoggedIn(true);
+                history.push(referer);
             }
         }).catch(() => {
             setShowLoader(false);
@@ -68,11 +70,9 @@ const Login = (props) => {
         });
     };
 
-    if (isLoggedIn) return <Redirect to={referer}/>;
-
     return (
         <div>
-            <button onClick={setShowModal}>Login</button>
+            <ElementMenu icon={faUser} handleClick={setShowModal}>LOGIN</ElementMenu>
             {showModal && (
                 <Modal open={showModal} toggle={setShowModal}>
                     <Formik
@@ -110,4 +110,4 @@ const Login = (props) => {
     );
 };
 
-export default Login;
+export default withRouter(Login);
