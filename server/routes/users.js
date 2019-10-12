@@ -1,6 +1,8 @@
 const bcryptjs = require('bcryptjs');
 const _ = require('lodash');
 const {User, validate} = require('../models/User');
+const {Sprint} = require('../models/Sprint');
+const {Project} = require('../models/Project');
 const auth = require('../middleware/auth');
 const express = require('express');
 const router = express.Router();
@@ -17,7 +19,21 @@ router.get('/', async (req, res) => {
 
 router.get('/getProjects/:userId', async (req, res) => {
   const usersProjects = await User.findById(req.params.userId).select('-password');
-  res.send(usersProjects.projects);
+
+  const projects =await Promise.all(usersProjects.projects.map(async proj => {
+
+    const sprint = await Sprint.find({ "project._id": proj._id });
+
+    const projectDate = await Project.findById(proj._id);
+    console.log(proj);
+
+    return {
+      "sprintNumber" : sprint.number,
+      "projectManager": projectDate.projectManager.name,
+      "projectTitle": proj.title
+    }
+  }));
+  res.send(projects);
 });
 
 router.get('/:userId', async (req, res) => {
