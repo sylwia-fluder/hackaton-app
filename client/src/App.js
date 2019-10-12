@@ -19,7 +19,7 @@ const App = () => {
   );
 
   const setTokens = (data) => {
-    sessionStorage.setItem(STORAGE_NAMES.USER, data);
+    sessionStorage.setItem(STORAGE_NAMES.USER, JSON.stringify(data));
     setAuthTokens(data);
   };
 

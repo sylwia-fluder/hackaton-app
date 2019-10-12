@@ -16,7 +16,7 @@ const Menu = () => {
             {authTokens ?
                 <Fragment>
                     <ElementMenu icon={faHome} link={''}>HOME</ElementMenu>
-                    <ElementMenu icon={faUser} link={goToUserProfile}>USER</ElementMenu>
+                    <ElementMenu icon={faUser} link={goToUserProfile()}>USER</ElementMenu>
                     <ElementMenu icon={faSignOutAlt} handleClick={logOut}>LOGOUT</ElementMenu>
                 </Fragment> :
                 <Login/>
