@@ -11,7 +11,7 @@ const headersWithToken = () => {
     return {
         Accept: 'application/json',
         'Content-Type': 'application/json',
-        'x-auth-token': getUserToken,
+        'x-auth-token': getUserToken(),
     };
 };
 
