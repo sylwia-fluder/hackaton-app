@@ -6,7 +6,12 @@ import { faUserCircle,faCheck,faPlusCircle } from '@fortawesome/free-solid-svg-i
 import styles from './UserMetadata.module.scss';
 
  export default class UserMetadataTile extends React.Component {
-    
+    constructor(props) {
+        super(props);
+        this.state = {
+            modalBox: false,
+        };
+    }
      render(){
         const personIcon = <FontAwesomeIcon icon={faUserCircle} size = {'6x'} />
         const approve = <FontAwesomeIcon icon={faCheck} size = {'3x'} />
