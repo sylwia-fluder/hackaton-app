@@ -1,5 +1,7 @@
+@import '../../styles/variables';
+
 .error {
-  color: #FF415A;
+  color: $color-9;
   margin-top: 6px;
 
   &::first-letter {
