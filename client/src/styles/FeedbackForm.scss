@@ -1,0 +1,27 @@
+.question {
+    color: #6CF1B1;
+    font-weight: bold;
+    font-family: Roboto;
+    font-style: normal;
+}
+
+.container-fluid {
+    background-color: rgba(196, 196, 196, 0.8);;
+    border: 15px solid white;
+    border-radius: 15px;
+    box-shadow: inset 0 0 10px #000000;
+}
+
+.question-button {
+    background: #F16C6C;
+    box-shadow: inset 0px 2px 2px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    width: 90px;
+    height: 35px;
+}
+.title {
+    font-size: 30px;
+    font-family: Roboto;
+    font-style: normal;
+    color: #6CF1B1;
+}
