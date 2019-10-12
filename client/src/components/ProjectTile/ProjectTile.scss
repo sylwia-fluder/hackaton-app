@@ -1,11 +1,31 @@
-@import '../../styles/variables';
-@import '../../styles/functions';
+
 
 .card {
     border: 15px solid black;
     border-radius: 15px;
+    font-size: 18px; 
+    
   }
   
   .card-notification {
-    background-color: gray;
+    background-color: #6CF1B1;
+    padding:20px;
+
+  }
+
+  .card-title{
+    color: #6CF1B1;
+    font-weight: bold;
+  }
+
+  .svg-tile {
+      margin-top:15px;
+  }
+
+  .card-bold {
+      font-weight: bold;
+  }
+
+  .neutral {
+      color: black;
   }
