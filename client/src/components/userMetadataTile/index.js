@@ -1,1 +1,1 @@
-export { default } from './userMetadataTile';
+export { default } from './UserMetadataTile';
