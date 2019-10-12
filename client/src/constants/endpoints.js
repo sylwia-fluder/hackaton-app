@@ -1,3 +1,5 @@
+const BACK_END_URL = 'http://localhost:5000/api';
+
 export const ENDPOINTS = {
-    SIGN_IN: 'http://localhost:5000/api/auth',
+    LOGIN: `${BACK_END_URL}/auth`,
 };

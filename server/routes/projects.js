@@ -1,5 +1,5 @@
-const pick = require('lodash');
-const express = require('express');
+const pick = require("lodash");
+const express = require("express");
 const router = express.Router();
 const {Project, validate} = require('../models/Project');
 const {User} = require('../models/User');
@@ -32,9 +32,10 @@ router.post('/', async (req, res) => {
     members: membersList,
     createdDate: new Date().getTime(),
   });
+
   
   const projectSaved = await project.save();
-
+  
   req.body.members.forEach(member => {
     addProjectToUser(member.memberId, projectSaved);
   });
@@ -45,4 +46,4 @@ router.post('/', async (req, res) => {
 });
 
 
-  module.exports = router; 
+module.exports = router;
