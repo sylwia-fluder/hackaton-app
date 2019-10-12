@@ -6,7 +6,9 @@ import Input from '../components/Input';
 import Error from '../components/Error';
 import Button from '../components/Button';
 import { getUserId, headersWithToken } from '../helpers';
-import { ENDPOINTS } from '../constants';
+import {ENDPOINTS, ROUTES} from '../constants';
+import { useAuth } from '../context';
+import history from '../history';
 
 const ChangePasswordModel = {
     password: '',
@@ -26,6 +28,10 @@ const ChangePasswordSchema = yup.object().shape({
 });
 
 const UserProfile = () => {
+    const {setAuthTokens} = useAuth();
+
+    const logOut = () => setAuthTokens();
+    
     const [showLoader, setShowLoader] = useState(false);
     const [showError, setShowError] = useState(false);
 
@@ -46,7 +52,8 @@ const UserProfile = () => {
             if (!response.ok) {
                 throw new Error('Not 200 response');
             } else {
-
+                logOut();
+                history.push(ROUTES.HOME);
             }
         }).catch(() => {
             setShowLoader(false);
