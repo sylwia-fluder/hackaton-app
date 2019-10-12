@@ -1,5 +1,4 @@
-
-.content_box {
+.content_box{
     max-width: 28rem;
     background: #C4C4C4;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -9,19 +8,20 @@
     padding: 0.5rem;
     box-sizing: border-box; 
 }
-.content {
+
+.content{
     box-sizing: border-box;
 }
-.person_icon_box { 
+.person_icon_box{
     margin-top:0.5rem;
     position: absolute;
-    max-height: 3rem;
-    
+    max-height: 3rem;  
 }
-.metadata_box {
+
+.metadata_box{
     margin-left:7rem;
 }
-.metadata {
+.metadata{
     font-family: 'Roboto', sans-serif;
     font-style: normal;
     font-weight: normal;
@@ -37,5 +37,10 @@
     color:#0FCC22;
 }
 .icon_add{
-    color: #FFF176;
+ color: #FFF176;
 }
+.name{
+    font-family: Roboto;
+}
+
+   
