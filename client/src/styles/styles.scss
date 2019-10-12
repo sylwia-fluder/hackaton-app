@@ -1,12 +1,13 @@
 @import 'variables';
 @import 'functions';
 
-html {
-  font-size: $fontSize_Base;
+* {
+  margin: 0;
+  padding: 0;
 }
 
 body {
-  margin: 0;
+  font-size: $fontSize_Base;
   font-family: $fontFamily_Base;
   background-color: $color-8;
 }

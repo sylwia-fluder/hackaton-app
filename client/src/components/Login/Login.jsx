@@ -68,8 +68,14 @@ const Login = (props) => {
             if (!response.ok) {
                 throw new Error('Not 200 response');
             } else {
-                setAuthTokens(response.headers.get(HEADER_TOKEN));
-                history.push(referer);
+                response.json()
+                    .then(data => {
+                        setAuthTokens({
+                            _token: response.headers.get(HEADER_TOKEN),
+                            _id: data.userId,
+                        });
+                        history.push(referer);
+                    })
             }
         }).catch(() => {
             setShowLoader(false);
