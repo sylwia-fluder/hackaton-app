@@ -22,6 +22,12 @@ const FeedbackSprint = mongoose.model('FeedbackSprint', new mongoose.Schema({
         }),
         required: true
     },
+    sprint: {
+        type: new mongoose.Schema({
+            number: Number
+        }),
+        required: true
+    },
     answer1: {
         type: Number,
         min: 1,
@@ -53,6 +59,7 @@ function validateFeedbackSprint(feedbackSprint) {
     const schema = {
       giverId: Joi.required(),
       takerId: Joi.required(),
+      sprintId: Joi.required(),
       answer1: Joi.number(),
       answer2: Joi.number(),
       answer3: Joi.number(),
