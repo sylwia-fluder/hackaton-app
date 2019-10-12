@@ -1,13 +1,8 @@
+const pick = require("lodash");
 const express = require("express");
 const router = express.Router();
-const { Sprint, validate } = require("../models/Sprint");
-const { Project } = require("../models/Project");
+const { Project, validate } = require("../models/Project");
 const { User } = require("../models/User");
-
-router.get("/browserProject/:ProjectId", async (req, res) => {
-  const sprint = await Sprint.find({ "project._id": req.params.ProjectId });
-  res.send(sprint);
-});
 
 router.post("/", async (req, res) => {
   const { error } = validate(req.body);
@@ -26,22 +21,21 @@ router.post("/", async (req, res) => {
     })
   );
 
-  const project = await Project.findById(req.body.projectId);
-  if (!project) return res.status(404).send("The project with given ID is not found!");
+  const projectManagerUser = await User.findById(req.body.projectManagerId);
+  if (!projectManagerUser) return res.status(404).send("The user with given ID is not found!");
 
-  const sprint = new Sprint({
+  const project = new Project({
+    projectManager: {
+      _id: projectManagerUser._id,
+      name: projectManagerUser.name
+    },
+    title: req.body.title,
     members: membersList,
-    startDate: req.body.startDate,
-    endDate: req.body.endDate,
-    number: req.body.number,
-    project: {
-      title: project.title,
-      _id: project._id
-    }
+    createdDate: new Date().getTime()
   });
-  const sprintSaved = await sprint.save();
+  const projectSaved = await project.save();
 
-  res.send(sprintSaved);
+  res.send(projectSaved);
 });
 
 module.exports = router;

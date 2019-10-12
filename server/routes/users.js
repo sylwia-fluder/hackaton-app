@@ -5,7 +5,7 @@ const auth = require('../middleware/auth');
 const express = require('express');
 const router = express.Router();
 
-router.get('/user', auth, async (req, res) => {
+router.get('/user', async (req, res) => {
   const user = await User.findById(req.user._id).select('-password');
   res.send(user);
 });
@@ -31,5 +31,6 @@ router.post('/', async (req, res) => {
     return res.status(500).send('Something failed.');
   }
 });
+
 
 module.exports = router; 

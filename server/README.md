@@ -24,4 +24,17 @@ User:
             email: string
             password: string
         }
-    
+Sprint:
+    Get sprint by project id        -> /api/sprint/browserProject/:projectId
+    Post - sprint create            -> /api/sprint/
+
+
+
+Project: 
+    Post - poject create            -> /api/project
+
+        Body {
+            projectManagerId: ObjectId,
+    		title: string,
+    		members: Array {"memberId":objectId}]
+        }
