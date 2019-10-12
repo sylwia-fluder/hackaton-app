@@ -1,3 +1,3 @@
 export const STORAGE_NAMES = {
-    TOKEN: '_token',
+    USER: '_user',
 };

@@ -5,6 +5,7 @@ import Home from './pages/Home';
 import Main from './pages/Main';
 import Project from './pages/Project';
 import FeedbackForm from './pages/FeedbackForm';
+import UserProfile from './pages/UserProfile';
 import Menu from './components/Menu';
 import PrivateRoute from './PrivateRoute';
 import history from './history';
@@ -12,13 +13,13 @@ import { AuthContext } from './context/';
 import { ROUTES, STORAGE_NAMES } from './constants';
 
 const App = () => {
-  const sessionStorageToken = sessionStorage.getItem(STORAGE_NAMES.TOKEN);
+  const sessionStorageUser = sessionStorage.getItem(STORAGE_NAMES.USER);
   const [authTokens, setAuthTokens] = useState(
-      sessionStorageToken === 'undefined' || sessionStorageToken === null ? '' : sessionStorageToken
+      sessionStorageUser === 'undefined' || sessionStorageUser === null ? '' : sessionStorageUser
   );
 
   const setTokens = (data) => {
-    sessionStorage.setItem(STORAGE_NAMES.TOKEN, data);
+    sessionStorage.setItem(STORAGE_NAMES.USER, data);
     setAuthTokens(data);
   };
 
@@ -29,6 +30,7 @@ const App = () => {
               <Route exact path={ROUTES.HOME} component={Home}/>
               <PrivateRoute path={ROUTES.MAIN} component={Main}/>
               <PrivateRoute path={ROUTES.PROJECT} component={Project}/>
+              <PrivateRoute path={`${ROUTES.USER_PROFILE}/:id`} component={UserProfile}/>
               <PrivateRoute path={ROUTES.FEEDBACKFORM} component={FeedbackForm}/>
         </Router>
       </AuthContext.Provider>

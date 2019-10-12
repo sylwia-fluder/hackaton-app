@@ -1,9 +1,10 @@
-import React, {Fragment} from 'react';
-import {faHome, faUser, faSignOutAlt} from '@fortawesome/free-solid-svg-icons';
-import {useAuth} from '../../context';
+import React, { Fragment } from 'react';
+import { faHome, faUser, faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
+import { useAuth } from '../../context';
 import styles from './Menu.module.scss';
 import ElementMenu from './ElementMenu';
 import Login from '../Login';
+import { goToUserProfile } from '../../helpers';
 
 const Menu = () => {
     const {authTokens, setAuthTokens} = useAuth();
@@ -15,7 +16,7 @@ const Menu = () => {
             {authTokens ?
                 <Fragment>
                     <ElementMenu icon={faHome} link={''}>HOME</ElementMenu>
-                    <ElementMenu icon={faUser} link={''}>USER</ElementMenu>
+                    <ElementMenu icon={faUser} link={goToUserProfile}>USER</ElementMenu>
                     <ElementMenu icon={faSignOutAlt} handleClick={logOut}>LOGOUT</ElementMenu>
                 </Fragment> :
                 <Login/>
