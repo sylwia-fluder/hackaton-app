@@ -1,0 +1,22 @@
+@import '../../styles/variables';
+@import '../../styles/functions';
+
+.button {
+  display: block;
+  margin: 10px auto 0;
+  min-width: 108px;
+  height: 39px;
+  text-transform: uppercase;
+  color: $color-1;
+  box-shadow: inset 0 2px 2px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  font-size: calculatePxToRem(20px);
+
+  &__green {
+      background-color: $color-6;
+  }
+
+  &__red {
+    background-color: $color-7;
+  }
+}
