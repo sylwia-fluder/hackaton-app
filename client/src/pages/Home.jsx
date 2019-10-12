@@ -1,11 +1,8 @@
-import React, { Fragment } from 'react';
-import Login from '../components/Login';
+import React from 'react';
 
 const Home = () => {
     return (
-        <Fragment>
-            <Login/>
-        </Fragment>
+        <div/>
     );
 };
 
