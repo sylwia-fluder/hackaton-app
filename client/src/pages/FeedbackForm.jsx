@@ -12,7 +12,7 @@ const FeedbackForm = () => {
         <div className="mt-2 col-11 d-flex flex-wrap flex-row mx-auto text-center justify-content-start container-fluid">
             <div className="mt-3 question-rate col-3 mx-auto container">
                 <div className="row">
-                    <p className="question w-100 mx-auto col">How would you rate the cooperation with this person?</p>
+                    <p className="question w-100 mx-auto col">How demanding and difficult was this sprint for you?</p>
                 </div>
                 <div className="row justify-content-center mb-4" >
                     <label className="radio col-0 p-0">1 <input type="radio" name="optradio"/></label>
@@ -24,7 +24,7 @@ const FeedbackForm = () => {
             </div>
             <div className="mt-3 question-rate col-3 mx-auto container">
                 <div className="row">
-                    <p className="question w-100 mx-auto col">How likely you are to cooperate with this person again?</p>
+                    <p className="question w-100 mx-auto col">How likely you are to cooperate with your team again?</p>
                 </div>
                 <div className="row justify-content-center" >
                     <label className="radio col-0 p-0">1 <input type="radio" name="optradio"/></label>
@@ -36,7 +36,7 @@ const FeedbackForm = () => {
             </div>
             <div className="mt-3 question-rate col-3 mx-auto container">
                 <div className="row">
-                    <p className="question w-100 mx-auto col">How would you rate the first impression?</p>
+                    <p className="question w-100 mx-auto col">How would you rate your team based on the first impression?</p>
                 </div>
                 <div className="row justify-content-center" >
                     <label className="radio col-0 p-0">1 <input type="radio" name="optradio"/></label>
@@ -62,7 +62,7 @@ const FeedbackForm = () => {
 
             <div className="question-rate col-3 mx-auto container mb-4">
                 <div className="row">
-                    <p className="question w-100 mx-auto col">Your personal advice for this person:</p>
+                    <p className="question w-100 mx-auto col">Describe how well the team dealt with a critique:</p>
                 </div>
                 <div className="row">
                      <div className="form-group mx-auto">
@@ -72,7 +72,7 @@ const FeedbackForm = () => {
             </div>
             <div className="question-rate col-3 mx-auto container">
                 <div className="row">
-                    <p className="question w-100 mx-auto col">What would be the one thing, that this person could improve on?</p>
+                    <p className="question w-100 mx-auto col">What would be the one thing, that the team could improve on?</p>
                 </div>
                 <div className="row">
                      <div className="form-group mx-auto">
@@ -82,7 +82,7 @@ const FeedbackForm = () => {
             </div>
             <div className="question-rate col-3 mx-auto container">
                 <div className="row">
-                    <p className="question w-100 mx-auto col">What are the major good traits of this person?</p>
+                    <p className="question w-100 mx-auto col">What are the major good traits of this team?</p>
                 </div>
                 <div className="row">
                      <div className="form-group mx-auto">
