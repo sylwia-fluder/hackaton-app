@@ -4,7 +4,7 @@ import { Route, Redirect } from 'react-router-dom';
 import { useAuth } from './context/auth';
 import { ROUTES } from './constants';
 
-const PrivateRoute = ({component: Component, ...rest}) => {
+const PrivateRoute = ({ component: Component, ...rest }) => {
     const { authTokens } = useAuth();
 
     return (
@@ -12,7 +12,7 @@ const PrivateRoute = ({component: Component, ...rest}) => {
                render={props => (
                    authTokens ?
                        <Component {...props} /> :
-                       <Redirect to={{pathname: ROUTES.SIGN_IN, state: {referer: props.location}}}/>
+                       <Redirect to={{pathname: ROUTES.HOME, state: {referer: props.location}}}/>
                )}
         />
     );

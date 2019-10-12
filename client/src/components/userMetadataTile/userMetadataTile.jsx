@@ -48,3 +48,4 @@ UserMetadataTile.propTypes = {
     name:propTypes.string,
     surname:propTypes.string
 }
+
