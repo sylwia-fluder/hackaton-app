@@ -1,7 +1,6 @@
 @import 'variables';
 @import 'functions';
 
-<<<<<<< HEAD
 * {
   margin: 0;
   padding: 0;
@@ -9,14 +8,6 @@
 
 body {
   font-size: $fontSize_Base;
-=======
-html {
-  font-size: $fontSize_Base;
-}
-
-body {
-  margin: 0;
->>>>>>> 24fe58aaf1b939781853a3b1b84eddcb185a372f
   font-family: $fontFamily_Base;
   background-color: $color-8;
 }

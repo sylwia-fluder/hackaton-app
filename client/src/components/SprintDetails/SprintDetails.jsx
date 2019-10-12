@@ -54,12 +54,9 @@ const SprintDetails = (props) => {
     // {(props.status == true) ?  
     //     <FontAwesomeIcon icon={faCheck} className={classNames(styles.feedback_status, styles.green)}/> : 
     //     <FontAwesomeIcon icon={faPlusCircle} className={classNames(styles.feedback_status, styles.yellow)}/>} 
-
-
-    
     return(
         <div className={styles.content}>
-            <p className={styles.user}>User</p>
+            <p className={styles.user}>User name</p>
             {(componentStatus === true) ?  
                 <FontAwesomeIcon icon={faCheck} className={classNames(styles.feedback_status, styles.green)}/> : 
                 <FontAwesomeIcon icon={faPlusCircle} className={classNames(styles.feedback_status, styles.yellow)}/>} 

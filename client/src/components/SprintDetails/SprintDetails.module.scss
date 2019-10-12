@@ -7,17 +7,13 @@
     border-radius: 10px;
     display: grid;
     margin: 8px;
-    //grid-template-columns: 1fr 1fr 1fr;
-    // grid-template-areas: 
-    //     "user user feedback-status"
-    //     "tasks tasks-status tasks-status"
-    //     "tasks tasks-status tasks-status";
-        
+   
 }
 
 .user {
     grid-area: 1 / 1 / span 1 / span 2;
     margin: 10px;
+    font-size: 20px;
 }
 
 .feedback_status {
