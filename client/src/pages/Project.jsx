@@ -3,12 +3,23 @@ import Main from '../components/UsersList/UserList';
 import Sprint from '../components/Sprint';
 
 const Project = () => {
-    const userList= [{name:'Adrian',name:'Podkalicki',done:true},{username:'MArcin',name:'Kowalski',done:false}]
+    const userList = [
+        {
+            username: 'Adrian',
+            name: 'Podkalicki',
+            done: true
+        },
+        {
+            username: 'Marcin',
+            name: 'Kowalski',
+            done: false
+        }];
+
     return (
         <div>
             Single Project
-             <Main usersList = {userList}/>
-            <Sprint />
+            <Main usersList={userList}/>
+            <Sprint/>
         </div>
     );
 };

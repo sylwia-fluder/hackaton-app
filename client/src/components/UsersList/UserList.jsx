@@ -1,10 +1,8 @@
 import React from 'react';
-import classNames from 'classnames';
 import styles from './UserList.module.scss';
-import UserMetadataTile from '../UserMetadataTile/UserMetadataTile'
+import UserMetadataTile from '../UserMetadataTile'
 
-
-const UserList =(props) => {
+const UserList = (props) => {
     return (
         <div className = {styles.content_list}>
            {
