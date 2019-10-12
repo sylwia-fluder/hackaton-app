@@ -5,6 +5,8 @@ const cors = require('cors');
 const app = express();
 const users = require('./routes/users');
 const auth = require('./auth/auth');
+const project = require('./routes/projects');
+const sprint = require('./routes/sprints');
 
 dotenv.config({ path: './config/.env.local' });
 
@@ -14,15 +16,21 @@ app.use(
   }),
 );
 app.use(express.json());
-app.use('/api/users',users);
-app.use('/api/auth',auth);
-
+app.use('/api/users', users);
+app.use('/api/auth', auth);
+app.use('/api/project', project);
+app.use('/api/sprint', sprint);
+/*
 mongoose
   .connect(process.env.DATABASE_URL, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
   .then(() => console.log('Connected to DB'))
+  .catch(err => console.error(err));
+*/
+mongoose.connect('mongodb://localhost/hackaton')
+  .then(() => console.log('Connect to DB'))
   .catch(err => console.error(err));
 
 const port = process.env.port || 5000;
