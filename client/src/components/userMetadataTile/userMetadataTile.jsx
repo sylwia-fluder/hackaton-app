@@ -1,18 +1,17 @@
 import React from 'react';
-import classNames from 'classnames';	
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'	
-import { faUserCircle,faCheck,faPlusCircle } from '@fortawesome/free-solid-svg-icons'	
-import styles from './UserMetadata.module.scss';
-
-
- const UserMetadataTile = (props) => {
+import classNames from 'classnames';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faUserCircle,faCheck,faPlusCircle } from '@fortawesome/free-solid-svg-icons'
+import styles from './userMetadata.module.scss';
+ const userMetadataTile = (props) => {
     const personIcon = <FontAwesomeIcon icon={faUserCircle} size = {'6x'} />
     const approve = <FontAwesomeIcon icon={faCheck} size = {'3x'} />
     const addfeadback = <FontAwesomeIcon icon={faPlusCircle} size = {'3x'} />
     const icon = props.done ? approve : addfeadback;
-    const clasNameIconFeebackAdd = classNames(styles.feedback_iconn, styles.icon_add);
-    const clasNameIconFeebackAprove = classNames(styles.feedback_iconn, styles.icon_approve);
+    const clasNameIconFeebackAdd = classNames( styles.feedback_iconn, styles.icon_add);
+    const clasNameIconFeebackAprove = classNames( styles.feedback_iconn, styles.icon_approve);
     const clasNameIconFeeback = props.done ? clasNameIconFeebackAprove : clasNameIconFeebackAdd;
+
     return (
         <div>
             <div className={styles.content_box}>
@@ -29,4 +28,4 @@ import styles from './UserMetadata.module.scss';
     )
  };
 
-export default UserMetadataTile
+export default userMetadataTile

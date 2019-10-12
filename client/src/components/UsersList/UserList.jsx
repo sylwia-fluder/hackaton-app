@@ -6,7 +6,7 @@ import UserMetadataTile from '../UserMetadataTile/UserMetadataTile'
 
 
 const UserList =(props) => {
-    console.log(props.userList);
+    console.log(props.usersList);
     return (
         <div>
             <UserMetadataTile name = {'Adrian'} surname = {'Podkalicki'} done={true}/>,
