@@ -5,6 +5,16 @@ const {Project, validate} = require('../models/Project');
 const {User} = require('../models/User');
 const {addProjectToUser, addProjectToManager} = require('../controllers/user');
 
+router.get('/getMembers/:projectId', async (req, res) => {
+  const projectMember = await Project.findById(req.params.projectId);
+  res.send(projectMember.members);
+});
+
+router.get('/:projectId', async (req, res) => {
+  const project = await Project.findById(req.params.projectId);
+  res.send(project);
+});
+
 router.post('/', async (req, res) => {
   const {error} = validate(req.body);
   
