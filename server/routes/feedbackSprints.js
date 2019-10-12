@@ -4,7 +4,7 @@ const {FeedbackSprint, validate} = require('../models/FeedbackSprint');
 const {User} = require('../models/User');
 const {Sprint} = require('../models/Sprint');
 
-router.get('findFeedbackByUser/:userId', async (req, res) => {
+router.get('/findFeedbackByUser/:userId', async (req, res) => {
     const feedback = await FeedbackSprint.find({'giver._id': req.params.userId}).sort('date');
     res.send(feedback);
   });
