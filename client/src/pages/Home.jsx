@@ -1,7 +1,18 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import { Redirect, withRouter } from 'react-router-dom';
 import Landing from '../components/Landing';
+import { ROUTES, STORAGE_NAMES } from '../constants';
+import { get } from 'lodash';
 
-const Home = () => {
+const Home = (props) => {
+    const sessionStorageUser = sessionStorage.getItem(STORAGE_NAMES.USER);
+    const inLogin = sessionStorageUser !== 'undefined' && sessionStorageUser !== null && !!sessionStorageUser;
+
+    const referer = get(props.location, 'state.referer.pathname', ROUTES.MAIN);
+
+    if (inLogin) return <Redirect to={referer}/>;
+    
     return (
         <Landing>
             Have you ever wondered what your colleagues think about you? Furthermore, would you like to tell someone how
@@ -12,4 +23,8 @@ const Home = () => {
     );
 };
 
-export default Home;
+Home.propTypes = {
+    location: PropTypes.object,
+};
+
+export default withRouter(Home);

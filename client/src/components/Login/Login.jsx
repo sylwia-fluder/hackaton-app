@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
 import { ErrorMessage, Field, Form, Formik } from 'formik';
 import { withRouter } from 'react-router-dom';
 import { get } from 'lodash';
@@ -128,6 +129,10 @@ const Login = (props) => {
             )}
         </div>
     );
+};
+
+Login.propTypes = {
+    location: PropTypes.object,
 };
 
 export default withRouter(Login);
