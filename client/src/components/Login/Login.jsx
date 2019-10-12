@@ -8,12 +8,14 @@ import Modal from '../Modal';
 import Loading from '../Loading';
 import Error from '../Error';
 import Input from '../Input';
+import Button from '../Button';
 import ElementMenu from '../Menu/ElementMenu';
 import { useToggle } from '../../hooks';
 import { useAuth } from '../../context';
 import { ROUTES, ENDPOINTS, HEADER_TOKEN } from '../../constants';
 import { headers } from '../../helpers';
 import history from '../../history';
+import styles from './Login.module.scss';
 
 const LoginModel = {
     email: '',
@@ -82,26 +84,29 @@ const Login = (props) => {
                     >
                         <Form>
                             {showLoader && <Loading fixed/>}
-                            <Field type='text'
-                                   name='email'
-                                   placeholder='Email'
-                                   center={true}
-                                   component={Input}/>
-                            <ErrorMessage name='email'
-                                          center={true}
-                                          component={Error}/>
-                            <Field type='password'
-                                   name='password'
-                                   placeholder='Password'
-                                   center={true}
-                                   component={Input}/>
-                            <ErrorMessage name='password'
-                                          center={true}
-                                          component={Error}/>
-                            <button type='submit'>
-                                Login
-                            </button>
-                            {showError && <Error>Something went wrong...</Error>}
+                            <div className={styles.container}>
+                                <Field type='text'
+                                       name='email'
+                                       placeholder='Email'
+                                       center={true}
+                                       component={Input}/>
+                                <ErrorMessage name='email'
+                                              center={true}
+                                              component={Error}/>
+                                <Field type='password'
+                                       name='password'
+                                       placeholder='Password'
+                                       center={true}
+                                       component={Input}/>
+                                <ErrorMessage name='password'
+                                              center={true}
+                                              component={Error}/>
+                                <Button>Login</Button>
+                                <button type='submit'>
+                                    Login
+                                </button>
+                                {showError && <Error>Something went wrong...</Error>}
+                            </div>
                         </Form>
                     </Formik>
                 </Modal>
