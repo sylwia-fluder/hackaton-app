@@ -1,11 +1,7 @@
 import React from 'react';
-import classNames from 'classnames';
 import '../styles/FeedbackForm.scss';
 
 const FeedbackForm = () => {
-
-    // const questionStyles = classNames(style.question, style.container-fluid, question-button);
-
     return (
        <div>
         <div className="text-center"><h3 className="title m-0"><strong>SPRINT FEEDBACK</strong></h3></div>

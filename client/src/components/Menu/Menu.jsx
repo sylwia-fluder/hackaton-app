@@ -4,8 +4,8 @@ import { useAuth } from '../../context';
 import styles from './Menu.module.scss';
 import ElementMenu from './ElementMenu';
 import Login from '../Login';
-import { goToUserProfile } from '../../helpers';
-import{goToMain}  from '../../helpers';
+import { goToUserProfile, goToMain } from '../../helpers';
+
 const Menu = () => {
     const {authTokens, setAuthTokens} = useAuth();
 
