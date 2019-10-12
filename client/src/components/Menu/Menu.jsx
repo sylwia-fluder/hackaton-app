@@ -10,7 +10,7 @@ const Menu = () => {
     const {authTokens, setAuthTokens} = useAuth();
 
     const logOut = () => setAuthTokens();
-    console.log(goToUserProfile())
+
     return (
         <nav className={styles.navbar}>
             {authTokens ?
