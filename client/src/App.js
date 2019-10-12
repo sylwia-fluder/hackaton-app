@@ -6,6 +6,8 @@ import Main from './pages/Main';
 import PrivateRoute from './PrivateRoute';
 import { AuthContext } from './context/';
 import { ROUTES, STORAGE_NAMES } from './constants';
+// import userMetadataTile from  './components/user_metadata_tile'
+
 
 const App = () => {
   const sessionStorageToken = sessionStorage.getItem(STORAGE_NAMES.TOKEN);
@@ -21,10 +23,15 @@ const App = () => {
   return (
       <AuthContext.Provider value={{authTokens, setAuthTokens: setTokens}}>
         <Router>
-              <Route exact path={ROUTES.HOME} component={Home}/>
+              <Route exact path={ROUTES.HOME} component={
+                Home
+                }/>
               <PrivateRoute path={ROUTES.MAIN} component={Main}/>
+              
         </Router>
       </AuthContext.Provider>
+     
+    
   );
 };
 
