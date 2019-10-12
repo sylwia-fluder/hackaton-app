@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './UserList.module.scss';
-import UserMetadataTile from '../UserMetadataTile'
+import UserMetadataTile from '../UserMetadataTile';
 
 const UserList = (props) => {
     return (

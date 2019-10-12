@@ -56,7 +56,7 @@ const Login = (props) => {
         setShowError(false);
 
         fetch(
-            ENDPOINTS.LOGIN,
+            ENDPOINTS.LOGIN + '/',
             {
                 method: 'POST',
                 body: JSON.stringify({
