@@ -1,9 +1,10 @@
 import React from 'react';
+import Sprint from '../components/Sprint';
 
 const Project = () => {
     return (
         <div>
-            Single Project
+            <Sprint />
         </div>
     );
 };
