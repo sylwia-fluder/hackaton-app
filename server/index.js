@@ -4,6 +4,7 @@ const dotenv = require("dotenv");
 const cors = require("cors");
 const app = express();
 const feedbackPersonal = require('./routes/feedbackPersonals');
+const feedbackSprint = require('./routes/feedbackSprints');
 const users = require("./routes/users");
 const auth = require("./auth/auth");
 const project = require("./routes/projects");
@@ -23,6 +24,8 @@ app.use('/api/auth', auth);
 app.use('/api/project', project);
 app.use('/api/sprint', sprint);
 app.use('/api/feedbackPersonal', feedbackPersonal);
+app.use('/api/feedbackSprint', feedbackSprint);
+app.use('/api/task', task);
 
 mongoose
   .connect(process.env.DATABASE_URL, {
