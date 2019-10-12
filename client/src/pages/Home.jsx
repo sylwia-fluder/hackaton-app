@@ -1,8 +1,7 @@
 import React from 'react';
-import Main from '../components/userMetadataTile/userMetadataTile'
-const Home = () => {
-    
+import Main from '../components/userMetadataTile/userMetadataTile';
 
+const Home = () => {
     return (
         <div>
             Home Page
@@ -12,5 +11,3 @@ const Home = () => {
 };
 
 export default Home;
-
-
