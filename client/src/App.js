@@ -3,6 +3,8 @@ import './styles/styles.scss';
 import { Router, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import Main from './pages/Main';
+import Project from './pages/Project';
+import FeedbackForm from './pages/FeedbackForm';
 import Menu from './components/Menu';
 import PrivateRoute from './PrivateRoute';
 import history from './history';
@@ -25,7 +27,9 @@ const App = () => {
         <Router history={history}>
               <Menu/>
               <Route exact path={ROUTES.HOME} component={Home}/>
-              <PrivateRoute exact path={ROUTES.MAIN} component={Main}/>
+              <PrivateRoute path={ROUTES.MAIN} component={Main}/>
+              <PrivateRoute path={ROUTES.PROJECT} component={Project}/>
+              <PrivateRoute path={ROUTES.FEEDBACKFORM} component={FeedbackForm}/>
         </Router>
       </AuthContext.Provider>
   );
