@@ -28,7 +28,7 @@ const App = () => {
               <Menu/>
               <Route exact path={ROUTES.HOME} component={Home}/>
               <PrivateRoute path={ROUTES.MAIN} component={Main}/>
-              <Route path={ROUTES.PROJECT} component={Project}/>
+              <PrivateRoute path={ROUTES.PROJECT} component={Project}/>
               <PrivateRoute path={ROUTES.FEEDBACKFORM} component={FeedbackForm}/>
         </Router>
       </AuthContext.Provider>
