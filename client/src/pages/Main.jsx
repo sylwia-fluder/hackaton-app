@@ -1,11 +1,10 @@
-import React from 'react';
+import React, { useEffect, useState, useContext } from "react";
+import endpoints from "../constants/endpoints";
 
 const Main = () => {
-    return (
-        <div>
-            Main Page (after login)
-        </div>
-    );
+  const [projects, setProjects] = useState([]);
+
+  return <div>Main Page (after login)</div>;
 };
 
 export default Main;
