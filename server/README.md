@@ -31,10 +31,24 @@ Sprint:
 
 
 Project: 
-    Post - poject create            -> /api/project
+    Post - project create            -> /api/project
 
         Body {
             projectManagerId: ObjectId,
     		title: string,
     		members: Array {"memberId":objectId}]
+        }
+feedbackPersonal:
+    Get users feedback              -> /api/feedbackPersonal/findFeedbackByUser/:userId
+    Post - feedback personal        -> /api/feedbackPersonal
+
+        Body {
+            giverId: objectId,
+            takerId: objectId,
+            answer1: number,
+            answer2: number,
+            answer3: number,
+            answer4: number,
+            answer5: number,
+            answer6: string
         }

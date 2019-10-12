@@ -7,6 +7,7 @@ const users = require('./routes/users');
 const auth = require('./auth/auth');
 const project = require('./routes/projects');
 const sprint = require('./routes/sprints');
+const feedbackPersonal = require('./routes/feedbackPersonals');
 
 dotenv.config({ path: './config/.env.local' });
 
@@ -20,6 +21,7 @@ app.use('/api/users', users);
 app.use('/api/auth', auth);
 app.use('/api/project', project);
 app.use('/api/sprint', sprint);
+app.use('/api/feedbackPersonal', feedbackPersonal);
 /*
 mongoose
   .connect(process.env.DATABASE_URL, {
