@@ -9,6 +9,7 @@ Runs the server.
 Endpoints:
 
 User: 
+    Get user project               -> /api/users/getProjects/:userId'
     Get users - my date            -> /api/users/user
     Post - registration            -> /api/users
 
@@ -36,6 +37,8 @@ Sprint:
 
 
 Project: 
+    Get project by id                -> /api/getMembers/project/:projectId
+    Get members by project id        -> /api/project/:projectId
     Post - project create            -> /api/project
 
         Body {
