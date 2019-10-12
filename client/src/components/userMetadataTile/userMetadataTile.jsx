@@ -8,12 +8,11 @@ import "./userMetadata.scss";
 
 
  const userMetadataTile = (props) => {
-    
-
-    const personIcon = <FontAwesomeIcon icon={faUserCircle} size = {'3x'} />
-    const approve = <FontAwesomeIcon icon={faCheck} size = {'2x'} />
-    const addfeadback = <FontAwesomeIcon icon={faPlusCircle} size = {'2x'} />
-    const icon= props.done ? approve : addfeadback 
+    const personIcon = <FontAwesomeIcon icon={faUserCircle} size = {'6x'} />
+    const approve = <FontAwesomeIcon icon={faCheck} size = {'3x'} />
+    const addfeadback = <FontAwesomeIcon icon={faPlusCircle} size = {'3x'} />
+    const icon = props.done ? approve : addfeadback 
+    const className = props.done ? "content feedback-iconn icon-approve" : "content feedback-iconn icon-add"
     return ( 
     <div>
         <div className = "content-box" >
@@ -24,7 +23,7 @@ import "./userMetadata.scss";
                 <p className = "metadata name ">{props.name}</p>
                 <p className = "metadata surname">{props.surname} </p>
             </div>
-            <div className = "metadata">{icon}</div>
+            <div className = {className} >{icon}</div>
        
         </div></div>
     )
