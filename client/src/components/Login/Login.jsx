@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import { ErrorMessage, Field, Form, Formik } from 'formik';
+import { withRouter } from 'react-router-dom';
 import { get } from 'lodash';
 import * as yup from 'yup';
+import { faUser } from '@fortawesome/free-solid-svg-icons';
 import Modal from '../Modal';
 import Loading from '../Loading';
 import Error from '../Error';
@@ -11,7 +13,6 @@ import { useToggle } from '../../hooks';
 import { useAuth } from '../../context';
 import { ROUTES, ENDPOINTS, HEADER_TOKEN } from '../../constants';
 import { headers } from '../../helpers';
-import { faUser } from '@fortawesome/free-solid-svg-icons';
 import history from '../../history';
 
 const LoginModel = {
@@ -109,4 +110,4 @@ const Login = (props) => {
     );
 };
 
-export default Login;
+export default withRouter(Login);
