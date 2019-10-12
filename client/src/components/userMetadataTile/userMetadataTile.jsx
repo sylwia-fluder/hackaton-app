@@ -37,7 +37,7 @@ export default class UserMetadataTile extends React.Component {
                         <p className={classNames(styles.metadata, styles.name)}>{this.props.name}</p>
                         <p className={classNames(styles.metadata, styles.surname)}>{this.props.surname} </p>
                     </div>
-                    <div className = {this.creactDynamicClass()} >{this.createIcon()}</div>
+                    <div className = {this.createDynamicClass()} >{this.createIcon()}</div>
                 </div>
             </div>
         )  
